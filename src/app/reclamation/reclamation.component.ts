@@ -72,7 +72,7 @@ export class ReclamationComponent implements OnInit {
     this.loadAllReclamations();
   }
 
- loadAllReclamations(): void {
+ loadAllReclamations(): void { //upadte table reclamations when using filter
     this.isLoading = true;
     this.reclamationService.getAllReclamations().subscribe({
       next: (data) => {
@@ -103,7 +103,7 @@ export class ReclamationComponent implements OnInit {
         titre: '',
         description: '',
         type: 'CLASSIC',
-        don: { id: this.currentDonId || 0 }
+        don: { id: this.currentDonId  }
       };
     }
   }
@@ -112,7 +112,7 @@ export class ReclamationComponent implements OnInit {
     if (this.selectedReclamation) {
       const newRecl = {
         ...this.selectedReclamation,
-        don: this.selectedReclamation.don || { id: 0 }
+        don: this.selectedReclamation.don 
       };
       const { id, ...reclamationToAdd } = newRecl;
       

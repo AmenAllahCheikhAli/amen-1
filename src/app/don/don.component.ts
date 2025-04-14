@@ -66,7 +66,7 @@ export class DonComponent implements OnInit {
         titre: '',
         description: '',
         montant: 0,
-        status: 'ACCEPTE'
+        status: 'ÊnCours'
       };
     }
     this.showForm = true;

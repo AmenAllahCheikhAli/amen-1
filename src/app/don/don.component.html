@@ -45,6 +45,8 @@
         <select [(ngModel)]="selectedDon.status">
           <option value="ACCEPTE">Accepted</option>
           <option value="REFUSE">Refused</option>
+          <option value="REFUSE">Encours</option>
+
         </select>
       </div>
 
@@ -100,12 +102,11 @@
         <td>{{ don.montant | currency }}</td>
         <td>
           <span class="status" [class]="don.status.toLowerCase()">
-            {{ don.status === 'ACCEPTE' ? 'Accepted' : 'Refused' }}
+            {{ don.status === 'ACCEPTE' ? 'Accepted' : 'EnCours' }}
           </span>
         </td>
         <td>
           <button class="btn-edit" (click)="openForm(don)">Edit</button>
-          <button class="btn-claim" [routerLink]="['/reclamation', don.id]">Claim</button>
           <button class="btn-delete" (click)="openDeleteModal(don)">Delete</button>
         </td>
       </tr>
